@@ -202,8 +202,8 @@ class SerialConfigDialog(wx.Dialog):
         # end wxGlade
 
     def __attach_events(self):
-        wx.EVT_BUTTON(self, self.button_ok.GetId(), self.OnOK)
-        wx.EVT_BUTTON(self, self.button_cancel.GetId(), self.OnCancel)
+        self.Bind(wx.EVT_BUTTON, self.OnOK, self.button_ok)
+        self.Bind(wx.EVT_BUTTON, self.OnCancel, self.button_cancel)
         if self.show & SHOW_TIMEOUT:
             wx.EVT_CHECKBOX(self, self.checkbox_timeout.GetId(), self.OnTimeout)
 
