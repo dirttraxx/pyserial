@@ -31,7 +31,7 @@ class SerialRxEvent(wx.PyCommandEvent):
         self.data = data
 
     def Clone(self):
-        self.__class__(self.GetId(), self.data)
+        return self.__class__(self.GetId(), self.data)
 
 # ----------------------------------------------------------------------
 
